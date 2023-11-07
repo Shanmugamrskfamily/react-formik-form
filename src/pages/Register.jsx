@@ -22,7 +22,7 @@ const Register = () => {
     };
     useEffect(() => {
         const check = localStorage.getItem('isLoggedin');
-        if (check==='true') {
+        if (check && check==='true') {
           navigate('/dashboard');
         }
       }, [navigate]);
@@ -57,7 +57,7 @@ const Register = () => {
     });
 
   return (
-    <div className="container d-flex">
+    <div className="container mt-2 d-flex">
     <div className="row">
       <div className="col-md-6">
           <img src="/images/Signup.jpg" className='register-img' alt="Signup" />
@@ -67,7 +67,7 @@ const Register = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}>
-            <Form className='text-white p-2 register-bg mt-4 fw-bold'>
+            <Form className='text-white p-2 register-bg fw-bold'>
                 <h2 className='text-center text-white fw-bold'>Register</h2>
               <div className="mb-3">
                 <label htmlFor="firstName">First Name</label>

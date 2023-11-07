@@ -15,7 +15,9 @@ const LandingPage = () => {
         const check=localStorage.getItem('isLoggedin');
         if (check==='true'){
             navigate('/dashboard');
+            return;
         }
+        localStorage.setItem('isLoggedin',false);
     });
 
 
@@ -55,7 +57,7 @@ const LandingPage = () => {
             Login
           </Link>
           <Link to="/register" className="btn w-50 btn-success">
-            Resister
+            Register
           </Link>
         </div>
       </div>
